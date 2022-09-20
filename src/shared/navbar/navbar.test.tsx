@@ -12,6 +12,6 @@ describe("<Navbar/>", () => {
       </ThemeProvider>
     );
 
-    expect(screen.getByText("Navbar")).toBeInTheDocument();
+    expect(screen.getByText("Podcaster")).toBeInTheDocument();
   });
 });
