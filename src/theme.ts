@@ -26,4 +26,9 @@ export const theme: Theme = {
       borderColor: "muted",
     },
   },
+  links: {
+    a: {
+      textDecoration: "none",
+    },
+  },
 };

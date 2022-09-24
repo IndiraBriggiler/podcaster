@@ -7,7 +7,7 @@ import {
   // useGetEpisodesQuery,
 } from "../../services/podcast.api";
 
-import { EpisodesData } from "./episodeData";
+import { EpisodesData } from "./episodesData";
 
 import { PodcastDetail } from "../../shared/podcast-detail";
 import moment from "moment";
@@ -46,14 +46,14 @@ export const Podcast: FC = () => {
   //   (podcast: Podcast) => podcast.id?.attributes?.["im:id"] === podcastId
   // );
 
-  let location = useLocation();
-
-  const podcastId = location.pathname.split("/")[2];
-
   // const { data: episodesData, isLoading: isLoadingEpisodesData } =
   //   useGetEpisodesQuery(podcastId, {
   //     skip: !podcastId,
   //   });
+
+  let location = useLocation();
+
+  const podcastId = location.pathname.split("/")[2];
 
   const episodesList = EpisodesData?.feed?.results;
 
