@@ -3,13 +3,14 @@ import type { Theme } from "theme-ui";
 export const theme: Theme = {
   fonts: {
     body: "system-ui, sans-serif",
-    heading: '"Avenir Next", sans-serif',
+    heading: "inherit",
     monospace: "Menlo, monospace",
   },
   colors: {
     text: "#000",
     background: "#fff",
     primary: "#2978BE",
+    body: "#8f8f8f",
   },
   cards: {
     primary: {

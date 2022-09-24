@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Flex, Heading, Spinner } from "theme-ui";
+import { Box, Divider, Flex, Heading, Spinner } from "theme-ui";
 import { useNavigate } from "react-router-dom";
 
 export const Navbar: FC = () => {
@@ -27,10 +27,9 @@ export const Navbar: FC = () => {
         {isLoading && <Spinner size={30} />}
       </Flex>
 
-      <hr
+      <Divider
         style={{
-          width: "98%",
-          textAlign: "center",
+          color: "body",
         }}
       />
     </Box>
