@@ -11,6 +11,7 @@ export const theme: Theme = {
     background: "#fff",
     primary: "#2978BE",
     body: "#8f8f8f",
+    lightblue: "#F9F9F9",
   },
   cards: {
     primary: {

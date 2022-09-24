@@ -1,0 +1,29 @@
+- request:
+    url: lookup?id=1481398762
+    method: get
+  response:
+    - status: 200
+      latency: 100
+      headers:
+        content-type: application/json
+      file: ./responses/getPodcastResponse.json
+
+- request:
+    url: lookup?id=1481398762/episodes
+    method: get
+  response:
+    - status: 200
+      latency: 100
+      headers:
+        content-type: application/json
+      file: ./responses/getEpisodesResponse.json
+
+- request:
+    url: lookup?id=1481398762/episode/1000580410780
+    method: get
+  response:
+    - status: 200
+      latency: 100
+      headers:
+        content-type: application/json
+      file: ./responses/getEpisodeResponse.json

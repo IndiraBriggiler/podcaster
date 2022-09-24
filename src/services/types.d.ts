@@ -14,81 +14,6 @@ interface PodcastListResponse {
   };
 }
 
-interface p {
-  name: {
-    label: string;
-  };
-  price: {
-    label: string;
-    attributes: {
-      amount: 0;
-      currency: string;
-    };
-  };
-  image: [
-    {
-      label: string;
-      attributes: {
-        height: string;
-      };
-    },
-    {
-      label: string;
-      attributes: {
-        height: string;
-      };
-    },
-    {
-      label: string;
-      attributes: {
-        height: string;
-      };
-    }
-  ];
-  summary: {
-    label: string;
-  };
-  artist: {
-    label: string;
-  };
-  title: {
-    label: string;
-  };
-  link: {
-    attributes: {
-      rel: string;
-      type: string;
-      href: string;
-    };
-  };
-  id: {
-    label: string;
-    attributes: {
-      id: string;
-    };
-  };
-  contentType: {
-    attributes: {
-      term: string;
-      label: string;
-    };
-  };
-  category: {
-    attributes: {
-      id: string;
-      term: string;
-      scheme: string;
-      label: string;
-    };
-  };
-  releaseDate: {
-    label: string;
-    attributes: {
-      label: string;
-    };
-  };
-}
-
 interface Podcast {
   "im:name": { label: string };
   "im:price": {
@@ -155,4 +80,46 @@ interface PodcastResponse {
       genres: string[];
     }
   ];
+}
+
+interface GetEpisodesRequest {
+  podcastId: string;
+  episodeId: string;
+}
+
+interface Episode {
+  artistName: string;
+  id: string;
+  name: string;
+  kind: string;
+  contentAdvisoryRating: string;
+  artworkUrl100: string;
+  genres: [
+    {
+      genreId: string;
+      name: string;
+      url: string;
+    }
+  ];
+  url: string;
+}
+interface Episodes {
+  feed: {
+    title: string;
+    id: string;
+    author: {
+      name: string;
+      url: string;
+    };
+    links: [
+      {
+        self: string;
+      }
+    ];
+    copyright: string;
+    country: string;
+    icon: string;
+    updated: string;
+    results: Episode[];
+  };
 }
