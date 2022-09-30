@@ -1,17 +1,23 @@
 import React from "react";
-import { ThemeProvider } from "theme-ui";
-import { render, screen } from "../../jest.utils";
-import { theme } from "../../theme";
+import { Route, Router, useNavigate } from "react-router-dom";
+import { render, screen, fireEvent } from "../../jest.utils";
 import { PodcastDetail } from "./podcast-detail";
 
 describe("<PodcastDetail/>", () => {
-  test("deberia renderizar el componente", () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <PodcastDetail />
-      </ThemeProvider>
-    );
+  test("debe renderizar el componente", () => {
+    render(<PodcastDetail />);
 
     expect(screen.getByText("Podcaster")).toBeInTheDocument();
+  });
+
+  test("debe redirigir hacia detalle de un podcast al hacer click sobre la imagen", () => {
+    render(<PodcastDetail />);
+
+    const onClick = jest.fn();
+
+    const img = screen.getByTestId("podcast-img");
+    fireEvent.click(img);
+
+    expect(onClick).toHaveBeenCalled();
   });
 });

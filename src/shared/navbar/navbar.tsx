@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Divider, Flex, Heading, Spinner } from "theme-ui";
+import { Box, Divider, Flex, Heading, Spinner, Text } from "theme-ui";
 import { useNavigate } from "react-router-dom";
 
 export const Navbar: FC = () => {
@@ -12,26 +12,22 @@ export const Navbar: FC = () => {
   return (
     <Box>
       <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
-        <Heading
+        <Text
+          variant="heading"
           onClick={handlerOnClick}
           sx={{
-            margin: "10px",
-            color: "primary",
+            m: 2,
             "&:hover": {
               cursor: "pointer",
             },
           }}
         >
           Podcaster
-        </Heading>
+        </Text>
         {isLoading && <Spinner size={30} />}
       </Flex>
 
-      <Divider
-        style={{
-          color: "body",
-        }}
-      />
+      <Divider />
     </Box>
   );
 };

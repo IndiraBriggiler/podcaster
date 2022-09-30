@@ -58,18 +58,18 @@ export const Podcast: FC = () => {
   const episodesList = EpisodesData?.feed?.results;
 
   const handleEpisodeClick = (episodeId: string) => {
-    navigate(`podcast/${podcastId}/episode/${episodeId}`);
+    navigate(`episode/${episodeId}`);
   };
 
   //agregar lógica
   const isLoading = false;
 
   return (
-    <Flex sx={{ p: "20px", justifyContent: "space-between" }}>
+    <Flex sx={{ p: 4, justifyContent: "space-between" }}>
       <PodcastDetail />
       {isLoading ? (
         <Box sx={{ width: "75%" }}>
-          <Card sx={{ fontWeight: "bold", mb: "20px", fontSize: "4" }}>
+          <Card sx={{ mb: "20px" }}>
             <Skeleton />
           </Card>
           <Card sx={{ p: "15px" }}>
@@ -78,11 +78,18 @@ export const Podcast: FC = () => {
         </Box>
       ) : (
         <Box sx={{ width: "75%" }}>
-          <Card sx={{ fontWeight: "bold", mb: "20px", fontSize: "4" }}>
-            <Text>{`Episodes: ${episodesList?.length}`}</Text>
+          <Card sx={{ fontWeight: "bold", mb: 3 }}>
+            <Text variant="h3">{`Episodes: ${episodesList?.length}`}</Text>
           </Card>
           <Card sx={{ p: "15px" }}>
-            <Box as="table" sx={{ width: "100%", borderCollapse: "collapse" }}>
+            <Box
+              as="table"
+              sx={{
+                width: "100%",
+                borderCollapse: "collapse",
+                fontFamily: "text",
+              }}
+            >
               <Box as="tr" sx={{ fontWeight: "bold", height: "40px" }}>
                 <Box as="th" sx={{ textAlign: "start", p: "15px" }}>
                   Title

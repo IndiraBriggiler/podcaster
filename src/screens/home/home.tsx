@@ -79,9 +79,7 @@ export const Home: FC = () => {
   return (
     <>
       <Box>
-        <Flex
-          sx={{ justifyContent: "flex-end", alignItems: "center", m: "20px" }}
-        >
+        <Flex sx={{ justifyContent: "flex-end", alignItems: "center", m: 3 }}>
           <Flex
             sx={{
               justifyContent: "center",
@@ -97,7 +95,9 @@ export const Home: FC = () => {
               fontWeight: "bold",
             }}
           >
-            <Text>{filteredPodcastList && filteredPodcastList?.length}</Text>
+            <Text sx={{ color: "background", mb: 0 }}>
+              {filteredPodcastList && filteredPodcastList?.length}
+            </Text>
           </Flex>
           <Input
             onChange={onFilter}
@@ -178,7 +178,6 @@ export const Home: FC = () => {
                       textAlign: "center",
                       p: "60px 10px 10px 10px",
                       width: "100%",
-                      height: "fit-content",
                     }}
                   >
                     <Box>{podcast?.["im:name"]?.label.toUpperCase()}</Box>

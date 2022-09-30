@@ -1,11 +1,12 @@
 import React, { FC } from "react";
-import { Box, Card, Divider, Flex, Image } from "theme-ui";
-import { useLocation } from "react-router-dom";
+import { Box, Card, Divider, Flex, Image, Text } from "theme-ui";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useGetAllPodcastQuery } from "../../services/podcast.api";
 import Skeleton from "react-loading-skeleton";
 
 export const PodcastDetail: FC = () => {
   const QUANTITY = 100;
+  const navigate = useNavigate();
 
   let location = useLocation();
 
@@ -14,15 +15,15 @@ export const PodcastDetail: FC = () => {
   const { data: podcastListData, isLoading: isLoadingPodcastListData } =
     useGetAllPodcastQuery(QUANTITY);
 
-  console.log("podcastListData", podcastListData);
-
   const podcastList = podcastListData?.feed?.entry;
 
   const podcast = podcastList?.find(
     (podcast: Podcast) => podcast?.id?.attributes?.["im:id"] === podcastId
   );
 
-  console.log("PODCAST", podcast);
+  const redirectToDetail = () => {
+    navigate(`/podcast/${podcastId}`);
+  };
 
   return isLoadingPodcastListData ? (
     <Card
@@ -30,9 +31,9 @@ export const PodcastDetail: FC = () => {
         maxWidth: "260px",
       }}
     >
-      <div style={{ textAlign: "center", margin: "10px" }}>
+      <Box style={{ textAlign: "center", padding: 3 }}>
         <Skeleton width="80%" height={170} />
-      </div>
+      </Box>
       <Divider
         style={{
           color: "body",
@@ -60,8 +61,11 @@ export const PodcastDetail: FC = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          margin: "10px",
+          p: 3,
+          cursor: "pointer",
         }}
+        onClick={redirectToDetail}
+        data-testid="podcast-img"
       >
         <Image
           src={podcast?.["im:image"]?.[2]?.label}
@@ -73,11 +77,9 @@ export const PodcastDetail: FC = () => {
           color: "body",
         }}
       />
-      <Box sx={{ margin: "10px" }}>
-        <Box sx={{ fontWeight: "bold", fontSize: "3" }}>
-          {podcast?.title?.label}
-        </Box>
-        <Box>{`by ${podcast?.["im:artist"]?.label}`}</Box>
+      <Box sx={{ m: 2, cursor: "pointer" }} onClick={redirectToDetail}>
+        <Text variant="title">{podcast?.title?.label}</Text>
+        <Text>{`by ${podcast?.["im:artist"]?.label}`}</Text>
       </Box>
 
       <Divider
@@ -85,9 +87,10 @@ export const PodcastDetail: FC = () => {
           color: "body",
         }}
       />
-      <Box sx={{ margin: "10px 0" }}>
-        <Box sx={{ fontWeight: "bold" }}>Description:</Box>
-        <Box>{podcast?.summary?.label}</Box>
+
+      <Box sx={{ my: 2 }}>
+        <Text sx={{ fontWeight: "bold" }}>Description:</Text>
+        <Text>{podcast?.summary?.label}</Text>
       </Box>
     </Card>
   );
