@@ -1,11 +1,12 @@
-import React, { FC, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Box, Card, Divider, Flex, Text } from "theme-ui";
-import {
-  useGetPodcastDetailQuery,
-  useGetAllPodcastQuery,
-  // useGetEpisodesQuery,
-} from "../../services/podcast.api";
+import React, { FC, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Box, Card, Flex, Text } from "theme-ui";
+//Agregarlo cuando funcione la api
+// import {
+//   useGetPodcastDetailQuery,
+//   useGetAllPodcastQuery,
+// } from "../../services/podcast.api";
+// import { useLocation } from "react-router-dom";
 
 import { EpisodesData } from "./episodesData";
 
@@ -16,53 +17,23 @@ import Skeleton from "react-loading-skeleton";
 export const Podcast: FC = () => {
   const navigate = useNavigate();
 
-  // const QUANTITY = 100;
-
+  //agregarlo cuando funcione la api, al igual que el loading
   // let location = useLocation();
-
   // const podcastId = location.pathname.split("/")[2];
 
-  // const {
-  //   data: podcastListData,
-  //   isLoading: isLoadingPodcastListData,
-  // } = useGetAllPodcastQuery(QUANTITY);
+  useEffect(() => {
+    setTimeout(function () {
+      setIsLoading(false);
+    }, 500);
+  }, []);
 
-  // const {
-  //   data: podcastData,
-  //   isLoading: isLoadingPodcastData,
-  // } = useGetPodcastDetailQuery(podcastId, {
-  //   skip: !podcastId,
-  // });
-
-  // const podcastList = podcastListData?.feed?.entry;
-
-  // const podcast = podcastList?.find(
-  //   (podcast: Podcast) => podcast.id?.attributes?.["im:id"] === podcastId
-  // );
-
-  // const podcastAlone = podcastData?.results?.[0];
-
-  // const episodesList = podcastList?.filter(
-  //   (podcast: Podcast) => podcast.id?.attributes?.["im:id"] === podcastId
-  // );
-
-  // const { data: episodesData, isLoading: isLoadingEpisodesData } =
-  //   useGetEpisodesQuery(podcastId, {
-  //     skip: !podcastId,
-  //   });
-
-  let location = useLocation();
-
-  const podcastId = location.pathname.split("/")[2];
+  const [isLoading, setIsLoading] = useState(true);
 
   const episodesList = EpisodesData?.feed?.results;
 
   const handleEpisodeClick = (episodeId: string) => {
     navigate(`episode/${episodeId}`);
   };
-
-  //agregar lógica
-  const isLoading = false;
 
   return (
     <Flex sx={{ p: 4, justifyContent: "space-between" }}>
@@ -116,6 +87,7 @@ export const Podcast: FC = () => {
                   as="tr"
                   key={index}
                   sx={{
+                    cursor: "pointer",
                     height: "40px",
                     borderTop: "1px solid #F1F1F1",
                     "&:nth-child(even)": { backgroundColor: "lightblue" },

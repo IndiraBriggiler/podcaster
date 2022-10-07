@@ -1,18 +1,24 @@
 import { htmlDecode } from "js-htmlencode";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-import { useLocation } from "react-router-dom";
 import { Card, Flex, Divider, Text } from "theme-ui";
-import { useGetPodcastDetailQuery } from "../../services/podcast.api";
 import { PodcastDetail } from "../../shared/podcast-detail";
 import { EpisodeData } from "./episodeData";
+//Agregarlo cuando funcione la api
+// import { useLocation } from "react-router-dom";
 
 export const Episode: FC = () => {
-  let location = useLocation();
+  //agregarlo cuando funcione la api, al igual que el loading
+  // let location = useLocation();
+  // const episodeId = location.pathname.split("/")[4];
 
-  const episodeId = location.pathname.split("/")[4];
+  useEffect(() => {
+    setTimeout(function () {
+      setIsLoading(false);
+    }, 500);
+  }, []);
 
-  const isLoading = false;
+  const [isLoading, setIsLoading] = useState(true);
 
   const description = EpisodeData?.descriptionn;
 
@@ -36,10 +42,14 @@ export const Episode: FC = () => {
       <Card sx={{ width: "75%", py: 4, px: 3 }}>
         {isLoading ? (
           <>
-            <Skeleton height={24} style={{ marginBottom: "8px" }} />
+            <Skeleton
+              height={24}
+              style={{ marginBottom: "8px" }}
+              data-tesid="skeleton-episode"
+            />
             <Skeleton count={6} />
             <Divider sx={{ my: 4 }} />
-            <Skeleton height={54} />{" "}
+            <Skeleton height={54} />
           </>
         ) : (
           <>

@@ -15,12 +15,7 @@ export const Home: FC = () => {
   const { data: podcastListData, isLoading: isLoadingPodcastListData } =
     useGetAllPodcastQuery(QUANTITY);
 
-  const [podcastList, setPodcastList] = useState(podcastListData?.feed?.entry);
-
-  useEffect(() => {
-    setPodcastList(podcastListData?.feed?.entry);
-    setFilteredPodcastList(podcastList);
-  }, [podcastListData]);
+  const podcastList = podcastListData?.feed?.entry;
 
   const [filteredPodcastList, setFilteredPodcastList] = useState(podcastList);
 
@@ -29,14 +24,10 @@ export const Home: FC = () => {
   const [resultsFound, setResultsFound] = useState(true);
 
   useEffect(() => {
-    setFilteredPodcastList(podcastList);
-  }, [podcastList]);
-
-  useEffect(() => {
-    if (podcastList !== undefined && searchValue.length > 0) {
-      filterPodcastList(searchValue);
-    }
-  }, [searchValue]);
+    searchValue === ""
+      ? setFilteredPodcastList(podcastList)
+      : filterPodcastList(searchValue);
+  }, [podcastList, searchValue]);
 
   const filterPodcastList = (value: string) => {
     if (podcastList !== undefined && searchValue) {
@@ -45,25 +36,13 @@ export const Home: FC = () => {
           podcast["im:artist"]?.label?.toLocaleLowerCase().includes(value) ||
           podcast["im:name"]?.label?.toLocaleLowerCase().includes(value)
       );
-      showResults(filtered);
       setResults(filtered);
+      setFilteredPodcastList(filtered);
     }
   };
 
   const setResults = (filtered: Podcast[]) => {
     filtered.length === 0 ? setResultsFound(false) : setResultsFound(true);
-  };
-
-  const showResults = (filtered: Podcast[]) => {
-    //VER NO FUNCIONA
-    if (searchValue.length === 0) {
-      setFilteredPodcastList(podcastList);
-      console.log("LISTA ENTERA");
-    } else {
-      setFilteredPodcastList(filtered);
-      console.log("puso el filtro");
-    }
-    // setFilteredPodcastList(filtered);
   };
 
   const onFilter = (event: { target: { value: string } }) => {
@@ -75,7 +54,6 @@ export const Home: FC = () => {
     navigate(`podcast/${id}`);
   };
 
-  console.log("fILTERED POD", filteredPodcastList);
   return (
     <>
       <Box>
@@ -122,13 +100,13 @@ export const Home: FC = () => {
             />
           </Flex>
           <Box sx={{ width: "500px" }}>
-            <Box sx={{ fontSize: "6", color: "body" }}>Lo sentimos!</Box>
-            <Box sx={{ fontSize: "4", color: "body" }}>
+            <Text sx={{ fontSize: "6", color: "body" }}>Lo sentimos!</Text>
+            <Text sx={{ fontSize: "4", color: "body" }}>
               No hemos encontrado resultados que coincidan con tu búesqueda.
-            </Box>
-            <Box sx={{ fontSize: "5", color: "body" }}>
+            </Text>
+            <Text sx={{ fontSize: "5", color: "body" }}>
               Por favor intenta nuevamente.
-            </Box>
+            </Text>
           </Box>
         </Flex>
 
@@ -180,8 +158,8 @@ export const Home: FC = () => {
                       width: "100%",
                     }}
                   >
-                    <Box>{podcast?.["im:name"]?.label.toUpperCase()}</Box>
-                    <Box>{`Author: ${podcast?.["im:artist"]?.label}`}</Box>
+                    <Text>{podcast?.["im:name"]?.label.toUpperCase()}</Text>
+                    <Text>{`Author: ${podcast?.["im:artist"]?.label}`}</Text>
                   </Card>
                 </Flex>
               );
