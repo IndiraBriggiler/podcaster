@@ -1,0 +1,196 @@
+export const EpisodesData = {
+  feed: {
+    title: "Top Episodes",
+    id: "https://rss.applemarketingtools.com/api/v2/us/podcasts/top/10/podcast-episodes.json",
+    author: {
+      name: "Apple",
+      url: "https://www.apple.com/",
+    },
+    links: [
+      {
+        self: "https://rss.applemarketingtools.com/api/v2/us/podcasts/top/10/podcast-episodes.json",
+      },
+    ],
+    copyright: "Copyright © 2022 Apple Inc. All rights reserved.",
+    country: "us",
+    icon: "https://www.apple.com/favicon.ico",
+    updated: "Sat, 24 Sep 2022 13:54:43 +0000",
+    results: [
+      {
+        artistName: "The New York Times",
+        id: "1000580410780",
+        name: "The Pastors Being Driven Out by Trumpism",
+        kind: "podcast-episodes",
+        artworkUrl100:
+          "https://is2-ssl.mzstatic.com/image/thumb/Podcasts115/v4/1c/ac/04/1cac0421-4483-ff09-4f80-19710d9feda4/mza_12421371692158516891.jpeg/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "11:33",
+        genres: [
+          {
+            name: "Daily News",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/the-pastors-being-driven-out-by-trumpism/id1200361736?i=1000580410780",
+      },
+      {
+        artistName: "Barstool Sports",
+        id: "1000580394801",
+        name: "Texans Coach Lovie Smith, Morten Andersen, NFL Week 3 Picks And Preview",
+        kind: "podcast-episodes",
+        contentAdvisoryRating: "Explict",
+        artworkUrl100:
+          "https://is2-ssl.mzstatic.com/image/thumb/Podcasts122/v4/46/ce/c6/46cec69e-4e9f-0d18-3e41-33261191bced/mza_2334942445220741425.jpg/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "11:33",
+        genres: [
+          {
+            name: "Football",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/texans-coach-lovie-smith-morten-andersen-nfl-week-3/id1089022756?i=1000580394801",
+      },
+      {
+        artistName: "The Ringer",
+        id: "1000580365967",
+        name: "A Celtics Scandal, the Suns Sale, the Sleeper Niners, and Week 3 Million-Dollar Picks With Peter Schrager and Benjamin Solak",
+        kind: "podcast-episodes",
+        contentAdvisoryRating: "Explict",
+        artworkUrl100:
+          "https://is2-ssl.mzstatic.com/image/thumb/Podcasts112/v4/00/8d/f6/008df6e8-42a2-a858-2fd1-d5fcb80208b5/mza_15109267102004170181.jpg/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "11:33",
+        genres: [
+          {
+            genreId: "1545",
+            name: "Sports",
+            url: "https://itunes.apple.com/us/genre/id1545",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/a-celtics-scandal-the-suns-sale-the-sleeper-niners/id1043699613?i=1000580365967",
+      },
+      {
+        artistName: "The New York Times",
+        id: "1000580288573",
+        name: "Putin’s Escalation of the War in Ukraine",
+        kind: "podcast-episodes",
+        artworkUrl100:
+          "https://is2-ssl.mzstatic.com/image/thumb/Podcasts115/v4/1c/ac/04/1cac0421-4483-ff09-4f80-19710d9feda4/mza_12421371692158516891.jpeg/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "11:33",
+        genres: [
+          {
+            name: "Daily News",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/putins-escalation-of-the-war-in-ukraine/id1200361736?i=1000580288573",
+      },
+      {
+        artistName: "NBC News",
+        id: "1000580105314",
+        name: "Dark Valley",
+        kind: "podcast-episodes",
+        artworkUrl100:
+          "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8c/00/7a/8c007a42-e550-0214-d4cb-b59cd7edf194/mza_5305664083935674472.jpeg/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "11:33",
+        genres: [
+          {
+            genreId: "1488",
+            name: "True Crime",
+            url: "https://itunes.apple.com/us/genre/id1488",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/dark-valley/id1464919521?i=1000580105314",
+      },
+      {
+        artistName: "Jon Favreau, Dan Pfeiffer",
+        id: "1000580353415",
+        name: '"The Special Master Baits Trump."',
+        kind: "podcast-episodes",
+        contentAdvisoryRating: "Explict",
+        artworkUrl100:
+          "https://is2-ssl.mzstatic.com/image/thumb/Podcasts122/v4/98/6e/b2/986eb2c5-49a2-5f01-d332-779394153808/mza_2110752195284468697.jpg/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "11:33",
+        genres: [
+          {
+            name: "Politics",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/the-special-master-baits-trump/id1192761536?i=1000580353415",
+      },
+      {
+        artistName: "NPR",
+        id: "1000580411668",
+        name: "Friday, September 23, 2022",
+        kind: "podcast-episodes",
+        artworkUrl100:
+          "https://is2-ssl.mzstatic.com/image/thumb/Podcasts112/v4/e1/c4/ac/e1c4ac17-77ee-4eb9-c934-c3499857168d/mza_13932015327661407155.png/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "11:33",
+        genres: [
+          {
+            name: "Daily News",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/friday-september-23-2022/id1222114325?i=1000580411668",
+      },
+      {
+        artistName: "Exactly Right",
+        id: "1000580273839",
+        name: "345 - Congrats to Australia",
+        kind: "podcast-episodes",
+        contentAdvisoryRating: "Explict",
+        artworkUrl100:
+          "https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/b3/a7/a1/b3a7a1ed-3d00-c29c-741c-fefaf57683a2/mza_6392300669830127327.jpeg/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "11:33",
+        genres: [
+          {
+            genreId: "1488",
+            name: "True Crime",
+            url: "https://itunes.apple.com/us/genre/id1488",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/345-congrats-to-australia/id1074507850?i=1000580273839",
+      },
+      {
+        artistName: "The Daily Wire",
+        id: "1000580443929",
+        name: "To Push Abortion, The Left Promotes A Fetal Heartbeat Hoax",
+        kind: "podcast-episodes",
+        artworkUrl100:
+          "https://is3-ssl.mzstatic.com/image/thumb/Podcasts116/v4/f0/44/1f/f0441f40-8971-e3fa-e662-160b1685ddda/mza_14401724982159517756.jpg/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "14:56",
+        genres: [
+          {
+            genreId: "1489",
+            name: "News",
+            url: "https://itunes.apple.com/us/genre/id1489",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/to-push-abortion-the-left-promotes-a-fetal-heartbeat-hoax/id1047335260?i=1000580443929",
+      },
+      {
+        artistName: "Morbid Network | Wondery",
+        id: "1000579714048",
+        name: "Listener Tales 51",
+        kind: "podcast-episodes",
+        contentAdvisoryRating: "Explict",
+        artworkUrl100:
+          "https://is4-ssl.mzstatic.com/image/thumb/Podcasts112/v4/bc/b7/de/bcb7deff-714b-47ea-e5f5-e94c682868e0/mza_13655988770657309249.jpeg/100x100bb.png",
+        releaseDate: "2021-07-06T16:00:00Z",
+        duration: "11:33",
+        genres: [
+          {
+            genreId: "1303",
+            name: "Comedy",
+            url: "https://itunes.apple.com/us/genre/id1303",
+          },
+        ],
+        url: "https://podcasts.apple.com/us/podcast/listener-tales-51/id1379959217?i=1000579714048",
+      },
+    ],
+  },
+};

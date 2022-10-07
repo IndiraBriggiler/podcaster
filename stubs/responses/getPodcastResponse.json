@@ -1,0 +1,47 @@
+{
+  "resultCount": 1,
+  "results": [
+    {
+      "wrapperType": "track",
+      "kind": "podcast",
+      "artistId": 127981066,
+      "collectionId": 1481398762,
+      "trackId": 1481398762,
+      "artistName": "WNYC Studios & OSM Audio",
+      "collectionName": "Dolly Parton's America",
+      "trackName": "Dolly Parton's America",
+      "collectionCensoredName": "Dolly Parton's America",
+      "trackCensoredName": "Dolly Parton's America",
+      "artistViewUrl": "https://podcasts.apple.com/us/artist/wnyc/127981066?uo=4",
+      "collectionViewUrl": "https://podcasts.apple.com/us/podcast/dolly-partons-america/id1481398762?uo=4",
+      "feedUrl": "https://feeds.feedburner.com/dolly-partons-america",
+      "trackViewUrl": "https://podcasts.apple.com/us/podcast/dolly-partons-america/id1481398762?uo=4",
+      "artworkUrl30": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts115/v4/58/b8/16/58b8165d-d674-16cd-3822-36d8acad0151/mza_5834995761907664558.jpg/30x30bb.jpg",
+      "artworkUrl60": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts115/v4/58/b8/16/58b8165d-d674-16cd-3822-36d8acad0151/mza_5834995761907664558.jpg/60x60bb.jpg",
+      "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts115/v4/58/b8/16/58b8165d-d674-16cd-3822-36d8acad0151/mza_5834995761907664558.jpg/100x100bb.jpg",
+      "collectionPrice": 0.0,
+      "trackPrice": 0.0,
+      "trackRentalPrice": 0,
+      "collectionHdPrice": 0,
+      "trackHdPrice": 0,
+      "trackHdRentalPrice": 0,
+      "releaseDate": "2021-07-06T16:00:00Z",
+      "collectionExplicitness": "cleaned",
+      "trackExplicitness": "cleaned",
+      "trackCount": 13,
+      "country": "USA",
+      "currency": "USD",
+      "primaryGenreName": "Music History",
+      "contentAdvisoryRating": "Clean",
+      "artworkUrl600": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts115/v4/58/b8/16/58b8165d-d674-16cd-3822-36d8acad0151/mza_5834995761907664558.jpg/600x600bb.jpg",
+      "genreIds": ["1524", "26", "1310", "1324", "1543"],
+      "genres": [
+        "Music History",
+        "Podcasts",
+        "Music",
+        "Society & Culture",
+        "Documentary"
+      ]
+    }
+  ]
+}
